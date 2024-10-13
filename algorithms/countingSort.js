@@ -10,6 +10,7 @@ function countingSort(arr) {
         countArr[arr[i]]++
     }
     return countArr
+//     дописать развертку массива по массиву частотности (не рабочий пока что)
 }
 
 let unsortedArr = randomList({listLength: 1, elemMin: 0, elemMax: 10})
