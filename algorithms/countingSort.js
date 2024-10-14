@@ -1,22 +1,32 @@
-const {randomInt, randomList} = require("./randomNums")
+const {randomInt, randomArray} = require("./randomNums")
 
 /* Подходит для случаев большого кол-ва повторений при небольшом кол-ве уникальных значений
 O(N)*/
 function countingSort(arr) {
-    const minElem = Math.min(...arr)
+    if (arr.length === 0) return []
+    if (arr.length === 1) return arr
+
     const maxElem = Math.max(...arr)
-    let countArr = new Array(maxElem-minElem+1).fill(0)
-    for (let i = 0; i <= countArr.length; i++) {
-        countArr[arr[i]]++
+    let countArr = new Array(maxElem+1).fill(0)
+    let sortArr = []
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== undefined) {
+            countArr[arr[i]]++
+        }
     }
-    return countArr
-//     дописать развертку массива по массиву частотности (не рабочий пока что)
+
+    for (let i = 0; i < countArr.length; i++) {
+        while (countArr[i] > 0) {
+            sortArr.push(i)
+            countArr[i]--
+        }
+    }
+    return sortArr
 }
 
-let unsortedArr = randomList({listLength: 1, elemMin: 0, elemMax: 10})
-console.log(`unsorted array:`, unsortedArr)
+const arrLength = randomInt({min: 0, max: 15})
+let unsortedArr = randomArray({arrLength: arrLength, elemMin: 0, elemMax: 15})
 let sortedArr = countingSort(unsortedArr)
-console.log(sortedArr)
 
-
-
+console.log(`unsorted array:`, unsortedArr)
+console.log(`sorted array:`, sortedArr)

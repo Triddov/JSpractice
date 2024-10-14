@@ -22,8 +22,8 @@ function binarySearch({numbersList, searchNum} = {}){
     return null
 }
 
-const listLength = randomInt({min: 6, max: 35})
-let List = Array.from({length: listLength}, (_, i) => i++) // нашел аналог list comprehension в Python
+const arrLength = randomInt({min: 6, max: 35})
+let List = Array.from({length: arrLength}, (_, i) => i++) // нашел аналог list comprehension в Python
 const num = randomInt({min: 1, max: 10})
 
 outputIndex = binarySearch({numbersList: List, searchNum: num})

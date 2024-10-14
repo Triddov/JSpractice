@@ -1,4 +1,4 @@
-const {randomList} = require('./randomNums')
+const {randomArray} = require('./randomNums')
 
 /* Returns a sorted list
 O(N**2) */
@@ -17,7 +17,7 @@ function selectionSort(List){
     return List
 }
 
-let unsortedList = randomList({listLength: 15, elemMin: 0, elemMax: 100})
+let unsortedList = randomArray({arrLength: 15, elemMin: 0, elemMax: 100})
 console.log(`unsorted list:`, unsortedList)
 
 let sortedList = selectionSort(unsortedList)

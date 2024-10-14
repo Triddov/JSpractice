@@ -1,4 +1,4 @@
-const {randomInt, randomList} = require("./randomNums")
+const {randomInt, randomArray} = require("./randomNums")
 
 // O(N*logN)
 function quickSort (array){
@@ -20,7 +20,7 @@ function quickSort (array){
 }
 
 const arrayLength = randomInt({min:10, max:50});
-const unsortedArray = randomList({listLength:arrayLength, elemMin:-10, elemMax:50})
+const unsortedArray = randomArray({arrLength:arrayLength, elemMin:-10, elemMax:50})
 console.log(`unsorted array`, unsortedArray)
 const sortedArray = quickSort(unsortedArray)
 console.log(`sorted array`, sortedArray)

@@ -5,16 +5,16 @@ function randomInt({min= 0, max = 0} = {}){
     return null
 }
 
-function randomList({listLength= 1, elemMin= 0, elemMax= 0} = {}){
-    if (listLength<=0 || elemMax < elemMin){
+function randomArray({arrLength= 1, elemMin= 0, elemMax= 0} = {}){
+    if (arrLength<0 || elemMax < elemMin){
         return null
     }
 
-    let list = new Array(listLength)
-    for(let i= 0; i<list.length; i++){
-        list[i] = randomInt({max: elemMax, min: elemMin})
+    let arr = new Array(arrLength)
+    for(let i= 0; i<arr.length; i++){
+        arr[i] = randomInt({max: elemMax, min: elemMin})
     }
-    return list
+    return arr
 }
 
-module.exports = {randomInt, randomList}
+module.exports = {randomInt, randomArray}

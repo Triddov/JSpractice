@@ -1,4 +1,4 @@
-const {randomInt, randomList} = require("./randomNums")
+const {randomInt, randomArray} = require("./randomNums")
 
 /*
 Returns the index for search element from list
@@ -13,7 +13,7 @@ function linealSearch({numbersList, searchNum} = {}){
     return null
 }
 
-let List = randomList({listLength: 20, elemMin: 0, elemMax: 20})
+let List = randomArray({arrLength: 20, elemMin: 0, elemMax: 20})
 const num = randomInt({min: 0, max: 20})
 
 outputIndex = linealSearch({numbersList: List, searchNum: num})
