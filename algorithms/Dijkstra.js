@@ -16,7 +16,7 @@ function generateGraph({amountVertices= 3} = {}){
         for(let j = i+1; j < amountVertices; j++){
             if (Math.random()>0.7){
                 let vertex1 = String.fromCharCode(firstVertexChar+i)
-                let vertex2 = String.fromCharCode(firstVertexChar+j)
+                let vertex2  = String.fromCharCode(firstVertexChar+j)
 
                 graph[vertex1].push(vertex2)
                 graph[vertex2].push(vertex1)
