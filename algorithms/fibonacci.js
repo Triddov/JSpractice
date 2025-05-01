@@ -1,4 +1,4 @@
-const {randomInt} = require("./randomNums")
+const {randomInt} = require("./randomNums.js")
 
 // Думал так можно((
 /*const FibonacciArray =  Array.from({length: 10}, (_,i) => {

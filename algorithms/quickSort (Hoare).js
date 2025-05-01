@@ -1,4 +1,4 @@
-const {randomInt, randomArray} = require("./randomNums")
+const {randomInt, randomArray} = require("./randomNums.js")
 
 // O(N*logN)
 function quickSort (array){

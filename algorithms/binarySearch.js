@@ -1,4 +1,4 @@
-const {randomInt} = require("./randomNums")
+const {randomInt} = require("./randomNums.js")
 
 /*
 Returns the index for search element from SORTED list

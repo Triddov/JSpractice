@@ -1,4 +1,4 @@
-const {randomInt} = require("./randomNums")
+const {randomInt} = require("./randomNums.js")
 
 /* generate no-balance Binary Tree */
 function generateBinaryTree(depth, currentDepth= 0){
@@ -10,14 +10,6 @@ function generateBinaryTree(depth, currentDepth= 0){
     node.R = generateBinaryTree(depth, currentDepth+1)
 
     return node
-}
-
-function printTree(node, level = 0) {
-    if (node !== null) {
-        printTree(node.R, level + 1);
-        console.log(' '.repeat(4 * level) + '->', node.value);  // Вывод текущего узла
-        printTree(node.L, level + 1);
-    }
 }
 
 // TODO: balancing tree algorithm
@@ -50,10 +42,18 @@ function BFS(node){
     return vertexArr
 }
 
-const depthLevel = randomInt({min:1, max:5})
+function printTree(node, level = 0) {
+    if (node !== null) {
+        printTree(node.R, level + 1)
+        console.log(' '.repeat(4 * level) + '->', node.value)
+        printTree(node.L, level + 1)
+    }
+}
+
+const depthLevel = randomInt({min:2, max:5})
 const binaryTree = generateBinaryTree(depthLevel)
 
 printTree(binaryTree)
 
-console.log(`Обход в глубину (с корня и влево): ${DFS(binaryTree)}`)
-console.log(`Обход в ширину (слева-направо): ${BFS(binaryTree)}`)
+console.log(`\nОбход в глубину (с корня и влево): ${DFS(binaryTree)}`)
+console.log(`\nОбход в ширину (слева-направо): ${BFS(binaryTree)}`)

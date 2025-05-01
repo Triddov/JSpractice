@@ -1,4 +1,4 @@
-const {randomInt, randomArray} = require("./randomNums")
+const {randomInt, randomArray} = require("./randomNums.js")
 
 /* Подходит для случаев большого кол-ва повторений при небольшом кол-ве уникальных значений
 O(N)*/

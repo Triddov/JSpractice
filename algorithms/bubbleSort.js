@@ -1,4 +1,4 @@
-const {randomArray} = require("./randomNums");
+const {randomArray} = require("./randomNums.js");
 
 /* Returns a sorted list
 O(N**2) */
